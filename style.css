@@ -1,0 +1,514 @@
+/*  using css grid and flexbox for the layout */
+
+/* base settings */
+
+html,
+body {
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: Montserrat, Merriweather, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  color: rgb(32, 32, 32);
+}
+
+/*  global settings for the heading elements */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Montserrat;
+}
+
+h1 {
+  font-size: 2.2em;
+}
+
+h2,
+h3,
+h4 {
+  font-size: 1.2em;
+}
+
+/* global settings for font and aligment on p element */
+
+p {
+  font-family: Merriweather;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0;
+  text-align: left;
+}
+
+/* main container grid / each section (header, main, footer, etc) is a grid item */
+
+main {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+/* parallax backgrounds - thanks to CSS tricks for the techinique below */
+
+/* grouping common bg settings for the parallax effect */
+
+.header-bg,
+.about-me-bg,
+.skills-bg,
+.projects-bg {
+  position: relative;
+}
+
+/* 
+Using pseudo elements to "fake" the background opacity while retaining full opacity on the text.
+For this to work, the background: url() rule has to come before all the others ::after values,
+otherwise the css inheritance fails for the background: no-repeat. I'm sure there is a better way
+to achieve this effect with JS but this is only html and css.
+*/
+
+.header-bg::after,
+.about-me-bg::after {
+  background: url(https://ricardoaguiar.com/hackyourfutureproject/therock.jpg);
+}
+
+.skills-bg::after {
+  background: url(https://ricardoaguiar.com/hackyourfutureproject/greece2.jpg);
+}
+
+/* .projects-bg::after { // commented out // visually the section gets too busy with the parallax image on the bg. 
+        background: url(https://ricardoaguiar.com/hackyourfutureproject/greece1.jpg);
+    } */
+
+/* after some trial and error, the grouping below for the pseudo ::after values was sucessful
+which means less redundant code */
+
+.header-bg::after,
+.about-me-bg::after,
+.skills-bg::after,
+.projects-bg::after {
+  content: "";
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  min-height: 100%;
+  z-index: -999;
+}
+
+/* ********* grid row 1 / header & nav *********** */
+
+/* header container and navigation */
+
+header {
+  grid-row: 1;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(56, 56, 56);
+}
+
+a:hover {
+  color: rgb(16, 132, 199);
+}
+
+ul {
+  list-style: none;
+}
+
+nav {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+nav ul {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  padding: 0;
+  align-items: baseline;
+}
+
+nav ul li:first-child {
+  font-size: 1.3em;
+}
+
+nav li {
+  flex: 1 1 auto;
+  text-align: end;
+}
+
+nav ul li a {
+  display: block;
+  padding: 1rem 2rem 1rem 1rem;
+  color: rgb(56, 56, 56);
+}
+
+/* grid row 2 / about me section styles / flexbox */
+
+.about-me {
+  grid-row: 2;
+  padding: 5vw 5vw 10vw 5vw;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.about-me h1 {
+  font-size: 1.6rem;
+  margin-top: 10px;
+  line-height: 2.8rem;
+}
+
+/* settings for all child elements */
+
+.about-me > * {
+  flex: 1 100%;
+}
+
+/* headshot */
+
+.avatar {
+  text-align: left;
+  padding-left: 50px;
+}
+
+/* left aside class / displays name and contact info */
+
+.aside-l {
+  padding-left: 50px;
+}
+
+.aside-l p {
+  line-height: 1.2;
+}
+
+/* right aside class / displays about me copy */
+
+.aside-r p {
+  line-height: 1.7rem;
+}
+
+/* contact me button */
+
+button {
+  width: 220px;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  font-family: Merriweather;
+  font-size: 1.2rem;
+  font-weight: 900;
+  border: 1px solid rgb(16, 132, 199);
+  display: block;
+}
+
+button:hover {
+  background-color: rgb(16, 132, 199);
+  color: whitesmoke;
+}
+
+/* social media icons / using flex again control spacing and row display */
+
+.social-media {
+  display: flex;
+  justify-self: center;
+  margin-bottom: 25px;
+}
+
+.social-media img {
+  padding-left: 0.8rem;
+}
+
+/************* skills section // ROW 4 *************/
+
+/* skills main class / controls the childs for the skills section tag  */
+
+.skills {
+  grid-row: 3;
+  display: flex;
+  flex-grow: 1;
+  flex-flow: row wrap;
+  text-align: center;
+  padding: 2vw 5vw 5vw 5vw;
+  /* background-color: rgba(56, 56, 56, 0.5) */
+}
+
+/* setting up the first child element to align top and have full width 
+/ it displays SKILLS centered on top of the section */
+
+.skills > *:first-child {
+  text-align: center;
+  align-self: flex-start;
+  width: 100%;
+  background-color: transparent;
+}
+
+/* settings for the other child elements */
+
+.skills > * {
+  flex: 1 1 0;
+  width: 300px;
+  flex-basis: auto;
+  margin: 0.8vw;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* ********* row 4 / projects *********** */
+
+/*  similar settings from the previous section with some tweaks */
+
+/* projects class for section tag  */
+
+.projects {
+  grid-row: 4;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 5vw;
+  background-color: #fff;
+}
+
+/* set up first child / displays h1 tag for projects */
+
+.projects > *:first-child {
+  align-self: flex-start;
+  width: 100%;
+  height: auto;
+  padding-bottom: 0.5vw;
+  background-image: url();
+}
+
+/* child tags / flex items / it displays all the article imgs */
+
+.projects > * {
+  flex: 1 1 auto;
+  width: 250px;
+  height: 200px;
+  margin: 2px;
+}
+
+/* setting up h4 tag over the image on article tags  
+    make the article tag to display as flex 
+    the .project class controls row and wrap 
+*/
+
+.projects article {
+  display: flex;
+  position: relative;
+}
+
+.projects article:hover {
+  opacity: 0.8;
+}
+
+/*  h4 absolute position to stay whitin the img */
+
+.projects h4 {
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  color: #fff;
+  padding: 0;
+  margin-left: 10px;
+}
+
+/* fit the image in the article tag */
+
+.projects img {
+  object-fit: cover;
+  flex: 1;
+  overflow: hidden;
+  height: 200px;
+}
+
+/* up arrow link on top of footer */
+
+.up-arrow {
+  grid-row: 5;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -35px;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  border: 3px solid rgb(255, 255, 255);
+  z-index: 2;
+}
+
+/* footer credits */
+
+.icon-credits {
+  font-size: 0.7em;
+  line-height: 1.4em;
+  text-align: center;
+  color: rgb(56, 56, 56);
+  text-transform: uppercase;
+}
+
+/* ********* row 6 / footer *********** */
+
+/* footer settings */
+
+footer {
+  grid-row: 6;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  background-color: rgba(56, 56, 56, 0.75);
+}
+
+/* setting up footer nav as flex / similar to top nav */
+
+footer ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+}
+
+footer li {
+  text-transform: uppercase;
+}
+
+footer a:hover {
+  color: whitesmoke;
+}
+
+/* setting for the footer p tag credits */
+
+footer p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.8em;
+  margin-top: 4vw;
+}
+
+/* responsive settings  */
+
+@media all and (min-width: 600px) {
+  .aside {
+    flex: 1 0 0;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .avatar {
+    order: 1;
+  }
+  .aside-l {
+    order: 2;
+  }
+  .aside-r {
+    order: 3;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* let the browser calculate the font size for the media queries */
+  html {
+    font-size: calc(0.7em + 1vw);
+  }
+  /* replace parallax img with a little gradient color on the background */
+  .header-bg::after,
+  .about-me-bg::after,
+  .skills-bg::after {
+    background: url();
+  }
+  body {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(16, 132, 199, 0.25),
+      rgba(56, 56, 56, 0.1)
+    );
+  }
+  header {
+    margin-bottom: 0;
+  }
+  /* responsive nav settings */
+  footer ul {
+    flex-flow: column;
+    margin: 2vw 10vw 2vw 14vw;
+  }
+  footer p {
+    margin: 5vw 10vw;
+  }
+  nav li {
+    text-align: center;
+    width: 50%;
+  }
+  nav ul li a {
+    padding: 0.2rem 0.5rem;
+  }
+  nav ul li:first-child {
+    font-size: 1.6rem;
+    text-align: center;
+    width: 100%;
+  }
+  .avatar {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  .about-me {
+    padding: 1rem;
+  }
+  .about-me h1 {
+    line-height: 2rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  /* reset padding on the mobile */
+  .aside-l {
+    padding: 0;
+  }
+  /* centenring the p elements on about-me contact details */
+  .aside-l p {
+    padding-left: 3.5rem;
+  }
+  .aside-r {
+    padding: 0;
+    margin: 0 auto;
+  }
+  button {
+    margin-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* sections skills and projects h1 elements */
+  section h1 {
+    font-size: 1.6rem;
+    margin-top: 1vw;
+    margin-bottom: 0.5vw;
+    text-align: center;
+  }
+  .skills,
+  .projects {
+    background-color: transparent;
+    padding: 2.5vw;
+  }
+  .skills > *,
+  .projects > * {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .skills > *:first-child {
+    margin-bottom: 0;
+  }
+}
