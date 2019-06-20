@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- due credits: to css-tricks.com, w3schools, freecodecamp.org, edx.org and mozilla mdn web docs -->
+<!-- Rachel Andrew for the css grid by examples // https://gridbyexample.com/examples/ -->
+<!-- huge thanks to Hack Your Future CPH for their time and consideration and, KhanAcademy for the tutorials for this project -->
+<!-- tested on chrome, firefox and safari for mac and windows -->
+<!-- some initial comments: the ids are used for nagivating the page.
+    Each of the skills and project section have two classes assigned to them. One for styling and the other for the parallax effect.
+    The targeting of the elements for these sections is being done through css inheritance. Thanks goes to eDX.org online class on css.
+    link to test the mobile version: [ https://ricardoaguiar.github.io/ ]
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ricardo Aguiar Portfolio</title>
+    <!-- link google fonts // https://fonts.google.com/-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <!--load all styles -->
+</head>
+
+<body>
+    <!-- MAIN CONTAINER // GRID (CHILD) ITEMS > HEADER, SECTION, FOOTER -->
+    <main>
+        <!-- HEADER AND NAVIGATION / GRID ROW 1 / GRID ITEM -->
+        <header id="home" class="header header-bg">
+            <!-- start grid item 1 & flex container -->
+            <!-- child flex items -->
+            <nav>
+                <ul>
+                    <li><a href="#home">Ricardo Aguiar</a></li>
+                    <li><a href="#about-me">about me</a></li>
+                    <li><a href="#skills">skills</a></li>
+                    <li><a href="#projects">projects</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- end row 1-->
+
+        <!-- ABOUT ME SECTION / GRID ROW 2 / GRID ITEM -->
+        <section id="about-me" class="about-me-bg">
+            <div class="about-me">
+                <div class="avatar"><img src="https://ricardoaguiar.com/hackyourfutureproject/ricardoAguiar500.png" alt="Ricardo Aguiar"></div>
+                <!-- aside classes for responsiveness -->
+                <aside class="aside aside-l">
+                    <h1>Ricardo Aguiar<br />I'm a Front-End Developer</h1>
+                    <!-- on a production site we could use the <address> tag here for contact information -->
+                    <ul class="contact-info">
+                        <li>Phone: <a href="tel:4542711216">1234 5678</a></li>
+                        <li>Email: <a href="mailto:jrb45dk@gmail.com?subject=hack your future project">jrb45dk@gmail.com</a></li>
+                        <li>Address: <a href="https://goo.gl/maps/dRWyobWMMpgdRmJU9" target="_blank">Vejle St. - Denmark</a></li>
+                        <ul class="social-media">
+                            <li>Social:</li>
+                            <li>
+                                <a href="https://www.facebook.com/ricardoaguiarphotography/" target="_blank"><img src="https://ricardoaguiar.com/hackyourfutureproject/facebook-circular-logo.png" alt="Facebook"></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/jricardoaguiar/" target="_blank"><img src="https://ricardoaguiar.com/hackyourfutureproject/linkedin.png" alt="Linkedin"></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/jricardoaguiar/" target="_blank"><img src="https://ricardoaguiar.com/hackyourfutureproject/twitter.png" alt="Twitter"></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/ricardoaguiar" target="_blank"><img src="https://ricardoaguiar.com/hackyourfutureproject/github-logo.png" alt="Github"></a>
+                            </li>
+                        </ul>
+                        <a href="tel:4542711216"><button>CONTACT ME</button></a>
+                </aside>
+                <aside class="aside aside-r">
+                    <h2>About Me</h2>
+                    <p>I was born in São Paulo, Brazil. Ever since I was little, I had a dream to at first visit the United States. Later when I was six years old, I told my parents that I was going to live in the US. When I think back now, I do not know
+                        where that idea came from, but it came from somewhere. To make a long story short, fast forward twenty years, there I was landing in New York City, where I would spend the next 13 years of my life, until 2003 when I moved to Miami
+                        and met my Danish wife a couple of years later. It has been fun!</p>
+                </aside>
+            </div>
+        </section>
+        <!-- end row 2 -->
+
+        <!-- SKILLS SECTION / GRID ROW 3 / GRID ITEM -->
+        <section id="skills" class="skills skills-bg">
+            <!-- start grid item 3 & flex container -->
+            <h1>SKILLS</h1>
+            <ul>
+                <li>
+                    <img src="https://ricardoaguiar.com/hackyourfutureproject/html.svg" alt="HTML Coding">
+                    <h2>Web technologies</h2>
+                    <p>I'v been using web thecnologies since the late 90's. I have coded html email campaings for advertising firms in New York. Help design and develop UI/UX for companies such as Citibank, GE and Pitney Bowes using Adobe software suite.
+                        I started customizing Wordpress themes with CSS and HTML for my personal photoblog in 2009.</p>
+                </li>
+                <li>
+                    <img src="https://ricardoaguiar.com/hackyourfutureproject/scuba-diving.svg" alt="Scuba Diving">
+                    <h2>Advanced Nitrox Scuba Diver</h2>
+                    <p>Inspired by my uncle, I took my Diving certification in the US. I have dived in Pennsylvania, Key Largo, Deerfield Beach, Blue Grotto, Hurghada in Egypt and some other places. My favorite dive is wreck Diving, where I get to explore
+                        shipwrecks. My favorite dive site is the Spiegel Grove in Key Largo.</p>
+                </li>
+                <li>
+                    <img src="https://ricardoaguiar.com/hackyourfutureproject/photo-camera.svg" alt="Photo Camera">
+                    <h2>Professional Photographer</h2>
+                    <p>I graduated from the Art Insitute of Ft. Lauderdale with a diploma in Professional Photography in 2008. The classes were held in analog and digital photography. I learned to develop and print black and white films and prints as well
+                        as process and retouch digital images. I planned to be an Underwater Photographer, but I ended up shooting weddings and portraits in Miami.</p>
+                </li>
+                <li>
+                    <img src="https://ricardoaguiar.com/hackyourfutureproject/translate.svg" alt="Language skills">
+                    <h2>Language skills</h2>
+                    <p>I'm fluent in Enligh, Portuguese, Spanish at medium level, and Danish (which is still a working progress). Because my native language is Portuguese I can also understand some of the Italian language.</p>
+                </li>
+            </ul>
+        </section>
+        <!-- end grid item 3 -->
+
+        <!-- PROJECTS SECTION / GRID ROW 4 / GRID ITEM -->
+        <section id="projects" class="projects projects-bg">
+            <!-- start grid item 4 & flex container -->
+            <h1>PROJECTS</h1>
+            <ul>
+                <li>
+                    <figure>
+                        <img src="https://ricardoaguiar.com/hackyourfutureproject/mallorca1.jpg" alt="Mallorca Bay">
+                        <figcaption>
+                            <h4><a href="https://www.ricardoaguiar.com" target="_blank">WP PHOTO BLOG</a></h4>
+                        </figcaption>
+                    </figure>
+                </li>
+
+                <li>
+                    <figure>
+                        <img src="https://ricardoaguiar.com/hackyourfutureproject/mallorca2.jpg" alt="Mallorca Bay">
+                        <figcaption><h4>ODOO DEPLOY</h4></figcaption>
+                    </figure>
+                </li>
+
+                <li>
+                    <figure>
+                        <img src="https://ricardoaguiar.com/hackyourfutureproject/frankjr.jpg" alt="Frank">
+                        <figcaption><h4>DRUPAL INSTALL</h4></figcaption>
+                    </figure>
+                </li>
+
+                <li>
+                    <figure>
+                        <img src="https://ricardoaguiar.com/hackyourfutureproject/cake.jpg" alt="Cake">
+                        <figcaption><h4>FCC LANDPAGE</h4></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="https://ricardoaguiar.com/hackyourfutureproject/mallorca5.jpg" alt="Mallorca">
+                        <figcaption><h4>FCC PORTFOLIO</h4></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="https://ricardoaguiar.com/hackyourfutureproject/therock.jpg" alt="Mallorca">
+                        <figcaption><h4>MY CODEPEN</h4></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="https://ricardoaguiar.com/hackyourfutureproject/cph.jpg" alt="Frank">
+                        <figcaption><h4>CMD LINE</h4></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="https://ricardoaguiar.com/hackyourfutureproject/mallorca4.jpg" alt="Cake">
+                        <figcaption><h4>GITHUB</h4></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="https://ricardoaguiar.com/hackyourfutureproject/greece1.jpg" alt="Mallorca">
+                        <figcaption><h4>FCC PORTFOLIO</h4></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="https://ricardoaguiar.com/hackyourfutureproject/greece2.jpg" alt="Mallorca">
+                        <figcaption><h4>HACK YOUR FUTURE</h4></figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </section>
+        <!-- end grid item 4 -->
+        
+        <!-- UP ARROW SECTION / GRID ROW 5 / GRID ITEM -->
+        <p class="up-arrow">
+            <!-- start grid item 5 & flex container -->
+            <a href="#home"><img src="https://ricardoaguiar.com/hackyourfutureproject/arrow-up.png" alt="Up Arrow"></a>
+        </p>
+        <!-- end grid item 5 -->
+
+        <!-- FOOTER SECTION / GRID ROW 6 / GRID ITEM -->
+        <footer id="contact">
+            <!-- start grid item 6 & flex container -->
+            <ul>
+                <li><a href="#about-me">about me</a></li>
+                <li><a href="#skills">skills</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#contact">contact</a></li>
+                <li>CREATED BY RICARDO AGUIAR</li>
+            </ul>
+
+            <!-- CREDITS -->
+            <p class="icon-credits">PHOTOGRAPHS • ©RICARDO AGUIAR<br> Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik"> Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
+                    title="Creative Commons BY 3.0" target="_blank">CC 3.0</a></p>
+        </footer>
+        <!-- end grid item 6  -->
+    </main>
+    <!-- END OF MAIN CONTAINER -->
+</body>
+<!-- END OF BODY-->
+
+</html>
+<!-- coded with love and dedication by Ricardo Aguiar using visual studio code and chrome for mac -->
+<!-- all photographs by ricardo aguiar | all rights reserved -->
+<!-- END OF PROJECT-->
