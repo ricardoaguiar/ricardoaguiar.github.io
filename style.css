@@ -259,7 +259,7 @@ nav ul li a {
 
 .email {
     grid-row: 2;
-    grid-column 1 / 2;
+    grid-column: 1 / 2;
 }
 
 .email-item {
