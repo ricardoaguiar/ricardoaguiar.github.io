@@ -1,19 +1,17 @@
 /*  using css grid and flexbox for the layout */
 
-
 /* base settings */
 
 html,
 body {
-    margin: 0 auto;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font-family: Montserrat, Merriweather, Verdana, sans-serif;
-    scroll-behavior: smooth;
-    color: rgb(32, 32, 32);
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: Montserrat, Merriweather, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  color: rgb(32, 32, 32);
 }
-
 
 /*  global settings for the heading elements */
 
@@ -21,44 +19,40 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: Montserrat;
+  font-family: Montserrat;
 }
 
 h1 {
-    font-size: 2em;
-    line-height: 1.3;
-    margin: 0;
+  font-size: 2em;
+  line-height: 1.3;
+  margin: 0;
 }
 
 h2,
 h3 {
-    font-size: 1.2em;
-    line-height: 3;
-    margin: 0
+  font-size: 1.2em;
+  line-height: 3;
+  margin: 0;
 }
-
 
 /* global settings for font and aligment on p element */
 
 p {
-    font-family: Merriweather;
-    font-size: 1em;
-    line-height: 1.5em;
-    margin: 0;
-    text-align: left;
+  font-family: Merriweather;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0;
+  text-align: left;
 }
-
 
 /* main container grid / each section (header, main, footer, etc) is a grid item */
 
 main {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
 }
 
-
 /* parallax backgrounds - thanks to CSS tricks for the techinique below */
-
 
 /* grouping common bg settings for the parallax effect */
 
@@ -66,9 +60,8 @@ main {
 .about-me-bg,
 .skills-bg,
 .projects-bg {
-    position: relative;
+  position: relative;
 }
-
 
 /*
 //Using pseudo elements to "fake" the background opacity while retaining full opacity on the text.
@@ -79,18 +72,16 @@ main {
 
 .header-bg::after,
 .about-me-bg::after {
-    background: url(https://ricardoaguiar.com/hackyourfutureproject/therock.jpg);
+  background: url(https://webhus.io/hyf/hyf-test/therock.jpg);
 }
 
 .skills-bg::after {
-    background: url(https://ricardoaguiar.com/hackyourfutureproject/greece2.jpg);
+  background: url(https://webhus.io/hyf/hyf-test/greece2.jpg);
 }
-
 
 /* .projects-bg::after { // commented out // visually the section gets too busy with the parallax image on the bg.
 background: url(https://ricardoaguiar.com/hackyourfutureproject/greece1.jpg);
 } */
-
 
 /* after some trial and error, the grouping below for the pseudo ::after values was sucessful
 //which means less redundant code */
@@ -99,58 +90,55 @@ background: url(https://ricardoaguiar.com/hackyourfutureproject/greece1.jpg);
 .about-me-bg::after,
 .skills-bg::after,
 .projects-bg::after {
-    content: "";
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    min-height: 100%;
-    z-index: -999;
+  content: "";
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  min-height: 100%;
+  z-index: -999;
 }
 
-
 /* ********* grid row 1 / header & nav *********** */
-
 
 /* header container and navigation */
 
 header {
-    /* grid-row: 1;
+  /* grid-row: 1;
 // removed the grid-rows as the css grid will
 // automaticaly create rows according to the html sctructure
 */
 }
 
 a {
-    text-decoration: none;
-    color: rgb(56, 56, 56);
-    margin: 0;
+  text-decoration: none;
+  color: rgb(56, 56, 56);
+  margin: 0;
 }
 
 a:hover {
-    color: rgb(16, 132, 199);
-    cursor: pointer;
+  color: rgb(16, 132, 199);
+  cursor: pointer;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 li {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
-
 
 /* grouped ul global settings */
 
@@ -158,124 +146,120 @@ nav ul,
 .about-me,
 .skills ul,
 footer ul {
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
 }
 
 .skills h1,
 .projects h1 {
-    display: flex;
-    align-self: flex-end;
-    justify-content: center;
-    margin: 1.6rem 0 1rem 0;
+  display: flex;
+  align-self: flex-end;
+  justify-content: center;
+  margin: 1.6rem 0 1rem 0;
 }
 
 nav {
-    font-family: Montserrat;
-    font-weight: bold;
-    font-size: 1em;
-    text-transform: uppercase;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 1em;
+  text-transform: uppercase;
 }
 
 nav ul {
-    align-items: baseline;
+  align-items: baseline;
 }
 
 nav ul li:first-child {
-    font-size: 1.3em;
+  font-size: 1.3em;
 }
 
 nav li {
-    flex: 1 1 auto;
-    text-align: end;
+  flex: 1 1 auto;
+  text-align: end;
 }
 
 nav ul li a {
-    display: block;
-    padding: 1rem 2rem 1rem 1rem;
-    color: rgb(56, 56, 56);
+  display: block;
+  padding: 1rem 2rem 1rem 1rem;
+  color: rgb(56, 56, 56);
 }
-
 
 /* grid row 2 / about me section styles / flexbox */
 
 .about-me {
-    /* grid-row: 2; */
-    padding: 5vw 8vw 10vw 8vw;
+  /* grid-row: 2; */
+  padding: 5vw 8vw 10vw 8vw;
 }
-
 
 /* settings for all child elements */
 
-.about-me>* {
-    flex: 1 100%;
+.about-me > * {
+  flex: 1 100%;
 }
-
 
 /* headshot */
 
 .avatar {
-    text-align: left;
-    padding-left: 2px;
-    margin-bottom: 20px;
+  text-align: left;
+  padding-left: 2px;
+  margin-bottom: 20px;
 }
 
 .avatar img {
-    width: 150px;
-    height: 150px;
+  width: 150px;
+  height: 150px;
 }
-
 
 /*  contact info details grid */
 
-.contact-info>ul {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-auto-flow: auto;
-    grid-column-gap: 15px;
-    grid-row-gap: 25px;
-    list-style: none;
-    max-width: 250px;
-    margin-top: 30px;
-    font-weight: 600
+.contact-info > ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: auto;
+  grid-column-gap: 15px;
+  grid-row-gap: 25px;
+  list-style: none;
+  max-width: 250px;
+  margin-top: 30px;
+  font-weight: 600;
 }
 
 .contact-info img {
-    width: 25px;
-    height: 25px;
+  width: 25px;
+  height: 25px;
 }
 
 .phone {
-    grid-row: 1;
-    grid-column: 1 / 2;
+  grid-row: 1;
+  grid-column: 1 / 2;
 }
 
 .phone-item {
-    grid-row: 1;
-    grid-column: span 4;
+  grid-row: 1;
+  grid-column: span 4;
 }
 
 .email {
-    grid-row: 2;
-    grid-column: 1 / 2;
+  grid-row: 2;
+  grid-column: 1 / 2;
 }
 
 .email-item {
-    grid-row: 2;
-    grid-column: span 4;
+  grid-row: 2;
+  grid-column: span 4;
 }
 
 .address {
-    grid-row: 3;
-    grid-column: 1 / 2;
+  grid-row: 3;
+  grid-column: 1 / 2;
 }
 
 .address-item {
-    grid-row: 3;
-    grid-column: span 4;
+  grid-row: 3;
+  grid-column: span 4;
 }
 
 .social,
@@ -283,290 +267,283 @@ nav ul li a {
 .linkedin,
 .twitter,
 .github {
-    grid-row: 4;
+  grid-row: 4;
 }
 
 .facebook,
 .linkedin,
 .twitter,
 .github {
-    grid-column: auto;
+  grid-column: auto;
 }
 
 .contact-button {
-    grid-row: 5;
-    grid-column: span 5;
-    text-align: center;
-    margin-top: 25px;
+  grid-row: 5;
+  grid-column: span 5;
+  text-align: center;
+  margin-top: 25px;
 }
-
 
 /* contact me button */
 
 button {
-    width: 220px;
-    padding: 1rem;
-    border-radius: 20px;
-    background-color: whitesmoke;
-    font-family: Merriweather;
-    font-size: 1.2rem;
-    font-weight: 900;
-    border: 1px solid rgb(16, 132, 199);
-    display: block;
-    /* margin-bottom: 4rem; */
+  width: 220px;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  font-family: Merriweather;
+  font-size: 1.2rem;
+  font-weight: 900;
+  border: 1px solid rgb(16, 132, 199);
+  display: block;
+  /* margin-bottom: 4rem; */
 }
 
 button:hover {
-    background-color: rgb(16, 132, 199);
-    color: whitesmoke;
-    cursor: pointer;
+  background-color: rgb(16, 132, 199);
+  color: whitesmoke;
+  cursor: pointer;
 }
-
 
 /* right aside class / displays about me copy */
 
 .aside-r p {
-    line-height: 1.8;
+  line-height: 1.8;
 }
-
 
 /************* skills section // ROW 4 *************/
 
 .skills {
-    padding: 4vw 5vw
+  padding: 4vw 5vw;
 }
 
 .skills li {
-    /* last child will expand to full width on browser resize */
-    flex: auto;
-    /*  */
-    width: 300px;
-    margin: 0.8vw;
-    padding: 20px;
-    border-radius: 6px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
+  /* last child will expand to full width on browser resize */
+  flex: auto;
+  /*  */
+  width: 300px;
+  margin: 0.8vw;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .skills img {
-    width: 60px;
-    margin-bottom: 1rem
+  width: 60px;
+  margin-bottom: 1rem;
 }
 
-
 /* ********* row 4 / projects *********** */
-
 
 /* recoded to display as a grid
 // using ul, li, figure and figcaption html5 tags
 */
 
 .projects {
-    padding: 5vw;
-    background-color: white;
+  padding: 5vw;
+  background-color: white;
 }
 
 .projects ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* margin: .5rem 2.5rem 2rem 2.5rem; */
-    /* grid-template-rows: repeat(auto-fill, 220px) 220px; */
-    grid-auto-rows: 220px;
-    row-gap: 2px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* margin: .5rem 2.5rem 2rem 2.5rem; */
+  /* grid-template-rows: repeat(auto-fill, 220px) 220px; */
+  grid-auto-rows: 220px;
+  row-gap: 2px;
 }
 
 .projects ul li figure {
-    overflow: hidden;
-    position: relative;
-    margin: 1px;
+  overflow: hidden;
+  position: relative;
+  margin: 1px;
 }
 
 .projects ul li figure img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 4px;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .projects ul li figure figcaption {
-    position: absolute;
-    bottom: 4px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .projects ul li figure figcaption h4,
 .projects ul li figure figcaption h4 a {
-    color: whitesmoke;
-    margin: .4rem;
+  color: whitesmoke;
+  margin: 0.4rem;
 }
 
 .projects ul li figure figcaption h4 a:hover {
-    color: rgb(55, 55, 55);
+  color: rgb(55, 55, 55);
 }
-
 
 /* up arrow */
 
 .up-arrow {
-    /* grid-row: 5; */
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: -35px;
-    margin-top: 20px;
-    height: 60px;
-    width: 60px;
-    border-radius: 100%;
-    border: 3px solid rgb(255, 255, 255);
-    z-index: 2;
+  /* grid-row: 5; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -35px;
+  margin-top: 20px;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  border: 3px solid rgb(255, 255, 255);
+  z-index: 2;
 }
 
 .up-arrow img {
-    width: 60px;
+  width: 60px;
 }
 
-
 /* ********* row 6 / footer *********** */
-
 
 /* footer settings */
 
 footer {
-    /* grid-row: 6; */
-    padding-top: 50px;
-    padding-bottom: 40px;
-    background-color: rgba(56, 56, 56, 0.75);
+  /* grid-row: 6; */
+  padding-top: 50px;
+  padding-bottom: 40px;
+  background-color: rgba(56, 56, 56, 0.75);
 }
-
 
 /* setting up footer nav as flex / similar to top nav */
 
 footer ul {
-    justify-content: space-around;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 500;
-    line-height: 1.7
+  justify-content: space-around;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  line-height: 1.7;
 }
 
 footer li {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 footer a:hover {
-    color: whitesmoke;
+  color: whitesmoke;
 }
-
 
 /* footer credits */
 
 footer p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 10px;
-    margin: 2.5rem;
-    text-align: center;
-    line-height: 1.4em;
-    color: rgb(56, 56, 56);
-    text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
+  margin: 2.5rem;
+  text-align: center;
+  line-height: 1.4em;
+  color: rgb(56, 56, 56);
+  text-transform: uppercase;
 }
-
 
 /* responsive settings  */
 
 @media all and (min-width: 600px) {
-    .aside {
-        flex: 1 0 0;
-    }
+  .aside {
+    flex: 1 0 0;
+  }
 }
 
 @media all and (min-width: 800px) {
-    .avatar {
-        order: 1;
-    }
-    .aside-l {
-        order: 2;
-    }
-    .aside-r {
-        order: 3;
-    }
+  .avatar {
+    order: 1;
+  }
+  .aside-l {
+    order: 2;
+  }
+  .aside-r {
+    order: 3;
+  }
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
-    /* let the browser calculate the font size for the media queries */
-    html {
-        font-size: calc(0.7em + 1vw);
-    }
-    /* replace parallax img with a little gradient color on the background */
-    .header-bg::after,
-    .about-me-bg::after,
-    .skills-bg::after {
-        background: url();
-    }
-    body {
-        background-image: linear-gradient( to bottom, rgba(16, 132, 199, 0.3), rgba(255, 255, 255, 0.1));
-    }
-    header {
-        margin-bottom: 0;
-    }
-    /* responsive nav settings */
-    nav li {
-        text-align: center;
-        width: 50%;
-        line-height: 1.6
-    }
-    nav ul li a {
-        padding: 0.2rem 0.5rem;
-    }
-    nav ul li:first-child {
-        font-size: 1.6rem;
-        text-align: center;
-        width: 100%;
-    }
-    /* ABOUT ME SECTION */
-    .about-me {
-        padding: 1.2rem;
-    }
-    .avatar {
-        text-align: center;
-        padding: 0;
-    }
-    /* replace the flex with a grid */
-    .contact-info>ul {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    button {
-        margin-bottom: 35px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    /* sections skills and projects h1 elements */
-    section h1 {
-        font-size: 1.6rem;
-        margin-top: 1vw;
-        margin-bottom: 0.5vw;
-        text-align: center;
-    }
-    .skills ul {
-        margin: .7rem .5rem 1.3rem .5rem;
-    }
-    .skills ul li {
-        margin-bottom: .8rem;
-    }
-    .skills,
-    .projects {
-        padding: .5rem;
-    }
-    .projects ul {
-        margin: 0;
-        padding: 0
-    }
-    .projects ul li ul {
-        margin: 0;
-        padding: 0
-    }
-    footer ul {
-        flex-flow: column;
-        margin: 2vw 10vw 2vw 14vw;
-        margin-bottom: 1rem;
-    }
+  /* let the browser calculate the font size for the media queries */
+  html {
+    font-size: calc(0.7em + 1vw);
+  }
+  /* replace parallax img with a little gradient color on the background */
+  .header-bg::after,
+  .about-me-bg::after,
+  .skills-bg::after {
+    background: url();
+  }
+  body {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(16, 132, 199, 0.3),
+      rgba(255, 255, 255, 0.1)
+    );
+  }
+  header {
+    margin-bottom: 0;
+  }
+  /* responsive nav settings */
+  nav li {
+    text-align: center;
+    width: 50%;
+    line-height: 1.6;
+  }
+  nav ul li a {
+    padding: 0.2rem 0.5rem;
+  }
+  nav ul li:first-child {
+    font-size: 1.6rem;
+    text-align: center;
+    width: 100%;
+  }
+  /* ABOUT ME SECTION */
+  .about-me {
+    padding: 1.2rem;
+  }
+  .avatar {
+    text-align: center;
+    padding: 0;
+  }
+  /* replace the flex with a grid */
+  .contact-info > ul {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  button {
+    margin-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* sections skills and projects h1 elements */
+  section h1 {
+    font-size: 1.6rem;
+    margin-top: 1vw;
+    margin-bottom: 0.5vw;
+    text-align: center;
+  }
+  .skills ul {
+    margin: 0.7rem 0.5rem 1.3rem 0.5rem;
+  }
+  .skills ul li {
+    margin-bottom: 0.8rem;
+  }
+  .skills,
+  .projects {
+    padding: 0.5rem;
+  }
+  .projects ul {
+    margin: 0;
+    padding: 0;
+  }
+  .projects ul li ul {
+    margin: 0;
+    padding: 0;
+  }
+  footer ul {
+    flex-flow: column;
+    margin: 2vw 10vw 2vw 14vw;
+    margin-bottom: 1rem;
+  }
 }
