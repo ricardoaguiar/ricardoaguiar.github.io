@@ -72,11 +72,11 @@ main {
 
 .header-bg::after,
 .about-me-bg::after {
-  background: url(https://webhus.io/hyf/hyf-test/therock.jpg);
+  background: url(https://ricardoaguiar.com/img/therock.jpg);
 }
 
 .skills-bg::after {
-  background: url(https://webhus.io/hyf/hyf-test/greece2.jpg);
+  background: url(https://ricardoaguiar.com/img/greece2.jpg);
 }
 
 /* .projects-bg::after { // commented out // visually the section gets too busy with the parallax image on the bg.
