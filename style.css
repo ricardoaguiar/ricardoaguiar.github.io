@@ -72,16 +72,16 @@ main {
 
 .header-bg::after,
 .about-me-bg::after {
-  background: url(https://ricardoaguiar.com/img/therock.jpg);
+  background: url(https://cdn.ricardobarrios.com/img/therock.jpg);
 }
 
 .skills-bg::after {
-  background: url(https://ricardoaguiar.com/img/greece2.jpg);
+  background: url(https://cdn.ricardobarrios.com/img/greece2.jpg);
 }
 
-/* .projects-bg::after { // commented out // visually the section gets too busy with the parallax image on the bg.
-background: url(https://ricardoaguiar.com/hackyourfutureproject/greece1.jpg);
-} */
+.projects-bg::after { 
+background: url(https://cdn.ricardobarrios.com/hackyourfutureproject/greece1.jpg);
+}
 
 /* after some trial and error, the grouping below for the pseudo ::after values was sucessful
 //which means less redundant code */
