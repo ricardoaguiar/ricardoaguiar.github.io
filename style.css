@@ -72,9 +72,6 @@ main {
 background: url(https://cdn.ricardobarrios.com/hackyourfutureproject/greece1.jpg);
 }
 
-/* after some trial and error, the grouping below for the pseudo ::after values was sucessful
-//which means less redundant code */
-
 .header-bg::after,
 .about-me-bg::after,
 .skills-bg::after,
@@ -98,15 +95,6 @@ background: url(https://cdn.ricardobarrios.com/hackyourfutureproject/greece1.jpg
 }
 
 /* ********* grid row 1 / header & nav *********** */
-
-/* header container and navigation */
-
-header {
-  /* grid-row: 1;
-// removed the grid-rows as the css grid will
-// automaticaly create rows according to the html sctructure
-*/
-}
 
 a {
   text-decoration: none;
