@@ -1,7 +1,3 @@
-/*  using css grid and flexbox for the layout */
-
-/* base settings */
-
 html,
 body {
   margin: 0 auto;
@@ -62,13 +58,6 @@ main {
 .projects-bg {
   position: relative;
 }
-
-/*
-//Using pseudo elements to "fake" the background opacity while retaining full opacity on the text.
-//For this to work, the background: url() rule has to come before all the others ::after values,
-//otherwise the css inheritance fails for the background: no-repeat. I'm sure there is a better way
-//to achieve this effect with JS but this is only html and css.
-*/
 
 .header-bg::after,
 .about-me-bg::after {
