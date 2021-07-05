@@ -61,15 +61,15 @@ main {
 
 .header-bg::after,
 .about-me-bg::after {
-  background: url(https://cdn.ricardobarrios.com/img/therock.jpg);
+  background: url(https://res.cloudinary.com/ricardoaguiar/image/upload/v1625499913/hackyourfuture/therock.jpg);
 }
 
 .skills-bg::after {
-  background: url(https://cdn.ricardobarrios.com/img/greece2.jpg);
+  background: url(https://res.cloudinary.com/ricardoaguiar/image/upload/v1625499911/hackyourfuture/greece1_otuy7e.jpg);
 }
 
-.projects-bg::after { 
-background: url(https://cdn.ricardobarrios.com/hackyourfutureproject/greece1.jpg);
+.projects-bg::after {
+  background: url(https://res.cloudinary.com/ricardoaguiar/image/upload/v1625499913/hackyourfuture/mallorca4.jpg);
 }
 
 .header-bg::after,
